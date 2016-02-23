@@ -19,11 +19,11 @@ function [ output_args ] = test4( input_args )
     disp('Distorted');
     disp(t0(x3d));
     
-    disp('After correction');
+    disp('First correction');
     new = sgn(W*x3d')';
     disp(t0(new));
     
-    disp('Second iteration');
+    disp('Second correction');
     new = sgn(W*new')';
     disp(t0(new));
 end
