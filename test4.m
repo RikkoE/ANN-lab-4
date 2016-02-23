@@ -31,7 +31,7 @@ function [ output_args ] = test4( input_args )
     W = x1' * x1 + x2' * x2 + x3' * x3;
         
     fixpoint = x2;
-    input = vm([1 0 0 1 1 0 1 0]);
+    input = vm([1 1 1 1 1 1 1 1]);
     last = 30;
     
     disp('Weight matrix');
