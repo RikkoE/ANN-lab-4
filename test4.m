@@ -5,7 +5,6 @@ function [ output_args ] = test4( input_args )
     x3 = vm([0 1 1 0 0 1 0 1]);
     
     x1d = vm([1 0 1 0 1 0 0 1]);
-<<<<<<< HEAD
     x2d = vm([0 0 0 0 0 1 0 0]);
     x3d = vm([1 1 1 0 1 1 0 1]);
 
@@ -23,7 +22,7 @@ function [ output_args ] = test4( input_args )
     %disp(t0(new2));
     disp(t0(new3));
     disp(t0(new4));
-=======
+
     x2d = vm([1 1 0 0 0 1 0 0]);
     x3d = vm([1 1 1 0 1 1 0 1]);
 
@@ -45,6 +44,5 @@ function [ output_args ] = test4( input_args )
     disp('Second correction');
     new = sgn(W*new')';
     disp(t0(new));
->>>>>>> refs/remotes/origin/master
 end
 
