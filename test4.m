@@ -13,7 +13,7 @@ function [ output_args ] = test4( input_args )
     W = x1' * x1 + x2' * x2 + x3' * x3;
         
     fixpoint = x2;
-    input = x2d;
+    input = vm([1 0 0 1 1 0 1 0]);
     last = 30;
     
     disp('Weight matrix');
@@ -36,14 +36,5 @@ function [ output_args ] = test4( input_args )
     
     disp('Finished pattern');
     disp(t0(input));
-    
-    % The first correction
-%     disp('First correction');
-%     new = sgn(W*x3d')';
-%     disp(t0(new));
-%     
-%     disp('Second correction');
-%     new = sgn(W*new')';
-%     disp(t0(new));
 end
 
