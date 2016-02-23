@@ -16,11 +16,11 @@ function [ output_args ] = test4( input_args )
     new2 = sgn(W*x2d')';
     new3 = sgn(W*x3d')';
     
-    new4=sgn(W*new3')';
+    new4=sgn(new3'*W)';
     
     %disp(t0(new));
     %disp(t0(new2));
     disp(t0(new3));
-    disp(t0(new4));
+    disp
 end
 
