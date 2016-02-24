@@ -7,7 +7,7 @@ pict;
 w = randn(1024, 1024);
 w = 0.5*(w*w');
 
-iter = 10000;
+iter = 1024;
 subiter = 0;
 unit = randi([1,1024], iter, 1);
 
