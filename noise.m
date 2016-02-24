@@ -10,13 +10,11 @@ for i = 1:iter
     pdist = sgn(w*pdist')';
     
     if isequal(pdist, input) == 0
-%         disp('not equal at iteration: ');
-%         disp(iter);
+        disp('Failed at percentage: ');
         disp((i/iter)*100);
+        break;
     end
 end
-
-
 
 end
 
