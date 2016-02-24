@@ -1,0 +1,25 @@
+function [ output_args ] = bignoise( input_args )
+
+nodes = 100;
+nrofpatterns = 300;
+patmat = sign(randn(nrofpatterns,nodes));
+w = zeroes(nodes,nodes);
+
+destroyedpat = 0;
+
+for i = 1:nrofpatterns
+    w = w + patmat(i,:)'*patmat(i,:);
+    
+    for j = 1:i
+    	x = sgn(w*patmat(j,:)')';
+        if isequal(patmat(j,:), x) == 0
+            destroyedpat = destroyedpat + 1;
+        end
+    end
+    disp('')
+end
+
+end
+
+
+
