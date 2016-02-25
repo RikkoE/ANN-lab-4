@@ -7,7 +7,7 @@ pict;
 w = randn(1024, 1024);
 w = 0.5*(w*w');
 
-iter = 5000;
+iter = 2000;
 subiter = 0;
 unit = randi([1,1024], iter, 1);
 
@@ -24,18 +24,18 @@ energyvect = ones(10,1);
 for i = 1:iter
     pattern = sgn(w(unit(i),:) * p1');
     p1(1,unit(i)) = pattern;
-    subiter = subiter + 1;
-    if subiter == (iter/10)
-        energyvect(i/(iter/10), 1) = -(sum(sum(w*p1'*p1)));
-        subiter = 0;
-    end
+%     subiter = subiter + 1;
+%     if subiter == 10000
+%         energyvect(i/10000, 1) = -(sum(sum(w*p1'*p1)));
+%         subiter = 0;
+%     end
 end
 
 vis(p1);
 
 x = [1 2 3 4 5 6 7 8 9 10];
 
-plot(x, energyvect);
+% plot(x, energyvect);
 
 % 
 % disp('P22 energy after fix');
