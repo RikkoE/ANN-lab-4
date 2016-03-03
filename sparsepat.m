@@ -2,14 +2,17 @@ function [ output_args ] = sparsepat( input_args )
 
 nodes = 100;
 nrofpatterns = 300;
-iter = 50;
+iter = 1;
+
+patstored = zeros(1,nrofpatterns);
 
 intactpat = -ones(1,iter);
-bias = 0.2;
+bias = 2.5;
+active = 5;
+
 
 for k = 1:iter
     
-    active = 20;
     
     patmat = zeros(nrofpatterns, nodes);
     
@@ -42,6 +45,8 @@ for k = 1:iter
                 if intactpat(:,k) < 0
                     intactpat(:,k) = j-1;
                 end
+            else
+                patstored(:,i) = patstored(:,i) + 1;
             end
         end
         
@@ -54,13 +59,13 @@ for k = 1:iter
     %
     
     bias = bias + 0.2;
-        
+    
 end
 
-axis([0,11,0,300]);
-ax1 = linspace(0, 10, iter);
-% ax2 = linspace(1,nrofpatterns, 300);
-plot(ax1, intactpat);
+axis([0,300,0,300]);
+% ax1 = linspace(0, 10, iter);
+ax2 = linspace(1,nrofpatterns, 300);
+plot(ax2, patstored);
 
 % axis([0,300,0,300]);
 % ax1 = linspace(1,nrofpatterns, 300);
